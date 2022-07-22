@@ -1,0 +1,31 @@
+{
+  "name": "productify",
+  "version": "1.0.0",
+  "description": "A simple but best Productivity Manager for Programmers who are working 24 hrs a Day",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/S1D007/Productify.git"
+  },
+  "keywords": [
+    "Productify",
+    "productivity_manager_tool",
+    "tool",
+    "programmers_tools",
+    "time_managing_tool"
+  ],
+  "author": "Siddhant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/S1D007/Productify/issues"
+  },
+  "homepage": "https://github.com/S1D007/Productify#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "chalk": "^4.1.2",
+    "color": "^4.2.3"
+  }
+}
