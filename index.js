@@ -1,9 +1,25 @@
 const chalk = require("chalk");
 const axios = require("axios");
+const sound = require("sound-play");
+const path = require("path");
+const arrayOfMusic = [
+  "foo.mp3",
+  "foo1.mp3",
+  "foo2.mp3",
+  "foo3.mpe",
+  "foo4.mp3",
+  "foo5.mp3",
+];
+const randMusic = arrayOfMusic[Math.floor(Math.random() * arrayOfMusic.length)];
+const filePath = path.join(`${__dirname}/media`, randMusic);
+sound.play(filePath, 1);
+setInterval(()=>{
+    sound.play(filePath, 1);
+},120000);
 const timer = () => {
   let d = new Date();
   let time = d.toLocaleTimeString();
-  console.log(chalk.greenBright.bold(time));
+  console.log("\t"+chalk.bgRedBright("!")+chalk.greenBright.bold(time)+chalk.bgRed("!"));
 };
 
 const stopCallingTheTimer = setInterval(timer, 1000);
@@ -72,7 +88,9 @@ const newsData = async () => {
   const response = await axios.get(url);
   const data = response.data.hits;
   const rand = Math.floor(Math.random() * data.length);
-  console.log("News: "+chalk.underline.whiteBright(`${data[rand].title}\n`) ,chalk.italic.bgBlueBright(`${data[rand].url}`));
-
+  console.log(
+    "[+] " + chalk.underline.white(`${data[rand].title}\n`),
+    chalk.underline.blue(chalk.bold.cyanBright("~>") + `${data[rand].url}`)
+  );
 };
-setInterval(newsData, 5000);
+setInterval(newsData, 10000);
