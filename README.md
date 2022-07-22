@@ -6,3 +6,8 @@ A simple but best Productivity Manager Tool for Programmers who are working 24 h
 ```js
   npm i 
 ```
+```batch
+  node index.js
+```
+
+<h1>💖</h1>
